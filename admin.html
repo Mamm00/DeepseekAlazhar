@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – Al Azhar Tex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #login-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--navy);
+    }
+    .login-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-gold);
+      width: 90%;
+      max-width: 400px;
+    }
+    #dashboard {
+      display: none;
+      padding: 2rem;
+    }
+    .admin-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .admin-tab {
+      padding: 0.5rem 1rem;
+      background: var(--charcoal);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .admin-tab.active {
+      background: var(--gold);
+    }
+    .admin-panel {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.3rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: var(--font-body);
+    }
+    .slide-item, .prod-edit-item {
+      background: var(--cream);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Panel -->
+  <div id="login-panel">
+    <div class="login-card">
+      <h2 style="text-align:center;">Admin Login</h2>
+      <form id="login-form">
+        <input type="password" id="admin-password" placeholder="Password" required>
+        <p id="login-error" style="color:var(--red);"></p>
+        <button type="submit" class="btn" style="width:100%;">Enter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard">
+    <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+      <h1>Control Panel</h1>
+      <div>
+        <button id="logout-btn" class="btn">Logout</button>
+        <button id="reset-btn" class="btn" style="background:var(--red);">Reset All</button>
+      </div>
+    </header>
+    <div class="admin-nav">
+      <button class="admin-tab active" data-target="password-panel">Password</button>
+      <button class="admin-tab" data-target="logo-panel">Logo</button>
+      <button class="admin-tab" data-target="slider-panel">Slider</button>
+      <button class="admin-tab" data-target="texts-panel">Texts</button>
+      <button class="admin-tab" data-target="backgrounds-panel">Backgrounds</button>
+      <button class="admin-tab" data-target="products-panel">Products</button>
+    </div>
+    <div id="password-panel" class="admin-panel"></div>
+    <div id="logo-panel" class="admin-panel" style="display:none;"></div>
+    <div id="slider-panel" class="admin-panel" style="display:none;"></div>
+    <div id="texts-panel" class="admin-panel" style="display:none;"></div>
+    <div id="backgrounds-panel" class="admin-panel" style="display:none;"></div>
+    <div id="products-panel" class="admin-panel" style="display:none;"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
